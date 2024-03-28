@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { products } from '../../products';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -7,11 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
-  products: any = [1, 2, 3, 4]
+  products: any
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.products =products
   }
 
 }
